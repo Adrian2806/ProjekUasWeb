@@ -15,7 +15,7 @@
     <div class="panel panel-flat border-top-lg border-top-primary">
     <form action="{{(isset($mobil))?route('rental.update',$mobil->id_mobil):route('rental.store')}}" method="POST">
         @csrf
-        @if(isset($mobil))?@method('PUT')@endif
+        @if(isset($mobil))@method('PUT')@endif
         <div class="panel-body">
             <div class="form-group">
                 <label class="control-label col-lg-2">Merk Mobil</label>

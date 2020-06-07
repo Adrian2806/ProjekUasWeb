@@ -3,7 +3,7 @@
 @section('content')
 <section class="content-header">
       <h1>
-        MOBIL
+        KOSTUMER
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -12,8 +12,8 @@
       </ol>
 </section>
 <div class="content">
-    <div class="col-lg-12">  
-    <p align="left"><a href="{{route('rental.create')}}"><button type="submit" class="btn btn-primary">
+<div class="col-lg-12">  
+    <p align="left"><a href="{{route('custom.create')}}"><button type="submit" class="btn btn-primary">
                      {{ __('Tambah Data') }}
                 </button></span></a></p> 
                  <!-- search form -->
@@ -29,14 +29,14 @@
                  <!-- /.search form -->
                 <table class="table table-bordered">
                     <thead>
-                        <tr><th>NO</th><th>MOBIL</th><th>PLAT</th><th>WARNA</th><th>TAHUN</th><th>OPSI</th></tr>
+                        <tr><th>NO</th><th>NAMA CUSTOMER</th><th>ALAMAT CUSTOMER</th><th>NIK</th><th>NO. TELEPON</th></tr>
                     </thead>
                     <tbody>
-                        @foreach ($mobil as $in=>$val)
-                        <tr><td>{{($in+1)}}</td><td>{{$val->merk_mobil}}</td><td>{{$val->plat_mobil}}</td><td>{{$val->warna_mobil}}</td><td>{{$val->tahun_mobil}}</td>
+                        @foreach ($customer as $in=>$val)
+                        <tr><td>{{($in+1)}}</td><td>{{$val->nama_customer}}</td><td>{{$val->alamat_customer}}</td><td>{{$val->NIK}}</td><td>{{$val->no_telp}}</td>
                         <td>
-                        <a href="{{route('rental.edit',$val->id_mobil)}}"><span class="glyphicon glyphicon-pencil"></span></a>
-                        <form action="{{route('rental.destroy', $val->id_mobil)}}" method="POST">
+                        <a href="{{route('custom.edit',$val->id_customer)}}"><span class="glyphicon glyphicon-pencil"></span></a>
+                        <form action="{{route('custom.destroy', $val->id_customer)}}" method="POST">
                             @csrf
                             @method('DELETE')
                         <button type="submit" ><span class="glyphicon glyphicon-trash"></span></button>
@@ -46,7 +46,7 @@
                     </tbody>
                 </table>
                 
-                {{$mobil->links()}}
+                {{$customer->links()}}
     </div>
 </div>
 @endsection

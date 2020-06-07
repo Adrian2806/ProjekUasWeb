@@ -16,10 +16,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::resource('rental','AdminController');
+Route::resource('admin1','AdminController');
 Auth::routes();
 
-Route::get('/home', 'AdminController@index')->name('home');
+Route::get('/admin', 'AdminController@index')->name('admin');
+
+Route::resource('rental','MobilController');
+Auth::routes();
+
+Route::get('/home', 'MobilController@index')->name('home');
 
 Route::resource('PPL','PplController');
 Auth::routes();
@@ -31,5 +36,9 @@ Auth::routes();
 
 Route::get('/transaksi', 'TransaksiController@index')->name('transaksi');
 
+Route::resource('custom','CustomerController');
+Auth::routes();
+
+Route::get('/customer', 'CustomerController@index')->name('customer');
 
 

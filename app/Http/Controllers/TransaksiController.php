@@ -24,7 +24,7 @@ class TransaksiController extends Controller
     {
         
         $title='Transaksi';
-        $transaksi=Transaksi::paginate(3);
+        $transaksi=Transaksi::paginate(5);
         return view('admin.dashboardtransaksi',compact('title','transaksi'));
     }
 
@@ -67,7 +67,7 @@ class TransaksiController extends Controller
         ],$messages);
 
         Transaksi::create($validasi);
-        return redirect('transaksi')->with('succes','data berhasil di update');
+        return redirect('bayar')->with('succes','data berhasil di update');
     }
 
     /**
@@ -122,7 +122,7 @@ class TransaksiController extends Controller
         ],$messages);
 
         Transaksi::whereid_transaksi($id)->update($validasi);
-        return redirect('transaksi')->with('succes','data berhasil di update');
+        return redirect('bayar')->with('succes','data berhasil di update');
     }
 
     /**
@@ -134,6 +134,6 @@ class TransaksiController extends Controller
     public function destroy($id)
     {
         Transaksi::whereid_transaksi($id)->delete();
-        return redirect('transaksi')->with('succes','data berhasil di update');
+        return redirect('bayar')->with('succes','data berhasil di update');
     }
 }

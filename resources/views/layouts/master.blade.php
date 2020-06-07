@@ -208,11 +208,9 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="/adminlte/img/adrian.jpeg" class="img-circle" alt="User Image">
-        </div>
-        <div class="pull-left info">
-          <p>Adrian Kurniansyah</p>
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+          <div class="image">
+          <img src="/adminlte/img/mobilll.jpg" width="205px" height="150px">
+          </div>
         </div>
       </div>
 
@@ -220,23 +218,19 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
         <li class="treeview">
+            <li><a href="{{route('PPL.index')}}"><i class="fa fa-circle-o"></i>BERANDA</a></li>
+        </li>
+        <li class="treeview">
             <li><a href="{{route('rental.index')}}"><i class="fa fa-circle-o"></i>MOBIL</a></li>
         </li>
-
         <li class="treeview">
-          <a href="#">
-            <i class="fa fa-pie-chart"></i>
-            <span>Menu Transaksi</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="{{route('bayar.index')}}"><i class="fa fa-circle-o"></i> Transaksi</a></li>
-            <li><a href=""><i class="fa fa-circle-o"></i> Tanggal</a></li>
-            <li><a href="../charts/flot.html"><i class="fa fa-circle-o"></i> Tempo</a></li>
-            <li><a href="../charts/inline.html"><i class="fa fa-circle-o"></i> Denda</a></li>
-          </ul>
+            <li><a href="{{route('custom.index')}}"><i class="fa fa-circle-o"></i>KOSTUMER</a></li>
+        </li>
+        <li class="treeview">
+            <li><a href="{{route('admin1.index')}}"><i class="fa fa-circle-o"></i>ADMIN</a></li>
+        </li>
+        <li class="treeview">
+            <li><a href="{{route('bayar.index')}}"><i class="fa fa-circle-o"></i>TRANSAKSI</a></li>
         </li>
       </ul>
     </section>
@@ -255,7 +249,7 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.4.0
     </div>
-    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
+    <strong>Copyright &copy; 2020-2021 <a href="https://adminlte.io">Adrian Kurniansyah</a>.</strong> All rights
     reserved.
   </footer>
 

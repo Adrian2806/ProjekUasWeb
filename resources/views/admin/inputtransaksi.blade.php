@@ -50,8 +50,8 @@
                 </div>
                 <label class="control-label col-lg-2">BIAYA</label>
                 <div class="col-lg-10">
-                    <input type="text" value="{{(isset($transaksi))?$transaksi->denda:old('denda')}}" name="denda" class="form-control">
-                    @error('denda')<small style="color:red">{{$message}}</small>@enderror
+                    <input type="text" value="{{(isset($transaksi))?$transaksi->biaya:old('biaya')}}" name="biaya" class="form-control">
+                    @error('biaya')<small style="color:red">{{$message}}</small>@enderror
                 </div>
                 <label class="control-label col-lg-2">DENDA</label>
                 <div class="col-lg-10">

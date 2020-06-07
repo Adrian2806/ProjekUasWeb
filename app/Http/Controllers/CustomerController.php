@@ -4,9 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
-
-use App\Admin;
-class AdminController extends Controller
+use App\Customer;
+class CustomerController extends Controller
 {
     public function __construct()
     {
@@ -22,9 +21,9 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $title='Admin';
-        $admin=Admin::paginate(5);
-        return view('admin.dashboardadmin',compact('title','admin'));
+        $title='Customer';
+        $customer=Customer::paginate(5);
+        return view('admin.dashboardcustomer',compact('title','customer'));
     }
 
     /**
@@ -34,8 +33,8 @@ class AdminController extends Controller
      */
     public function create()
     {
-        $title='Input Admin';
-        return view('admin.inputadmin',compact('title'));
+        $title='Input Customer';
+        return view('admin.inputcustomer',compact('title'));
     }
 
     /**
@@ -52,13 +51,14 @@ class AdminController extends Controller
             'numeric' =>'Kolom :attribute harus Angka',
         ];
         $validasi = $request->validate([ 
-            'nama_admin'=>'required',
-            'username_admin'=>'required',
-            'password_admin'=>'required'
+            'nama_customer'=>'required',
+            'alamat_customer'=>'required',
+            'NIK'=>'required',
+            'no_telp'=>'required'
         ],$messages);
 
-        Admin::create($validasi);
-        return redirect('admin1')->with('succes','data berhasil di update');
+        Customer::create($validasi);
+        return redirect('custom')->with('succes','data berhasil di update');
     }
 
     /**
@@ -80,9 +80,9 @@ class AdminController extends Controller
      */
     public function edit($id)
     {
-        $title='Input Admin';
-        $admin=Admin::find($id);
-        return view('admin.inputadmin',compact('title','admin'));
+        $title='Input Customer';
+        $customer=Customer::find($id);
+        return view('admin.inputcustomer',compact('title','customer'));
     }
 
     /**
@@ -100,13 +100,14 @@ class AdminController extends Controller
             'numeric' =>'Kolom :attribute harus Angka',
         ];
         $validasi = $request->validate([ 
-            'nama_admin'=>'required',
-            'username_admin'=>'required',
-            'password_admin'=>'required'
+            'nama_customer'=>'required',
+            'alamat_customer'=>'required',
+            'NIK'=>'required',
+            'no_telp'=>'required'
         ],$messages);
 
-        Admin::whereid_admin($id)->update($validasi);
-        return redirect('admin1')->with('succes','data berhasil di update');
+        Customer::whereid_customer($id)->update($validasi);
+        return redirect('custom')->with('succes','data berhasil di update');
     }
 
     /**
@@ -117,7 +118,7 @@ class AdminController extends Controller
      */
     public function destroy($id)
     {
-        Admin::whereid_admin($id)->delete();
-        return redirect('admin1')->with('succes','data berhasil di update');
+        Customer::whereid_customer($id)->delete();
+        return redirect('custom')->with('succes','data berhasil di update');
     }
 }

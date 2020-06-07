@@ -3,7 +3,7 @@
 @section('content')
 <section class="content-header">
       <h1>
-        Transaksi
+        TRANSAKSI
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -29,7 +29,8 @@
                  <!-- /.search form -->
                 <table class="table table-bordered">
                     <thead>
-                        <tr><th>NO</th>
+                        <tr>
+                        <th>NO</th>
                         <th>ID ADMIN</th>
                         <th>ID KOSTUMER</th>
                         <th>ID MOBIL</th>
@@ -41,8 +42,7 @@
                         <th>JUMLAH BAYAR</th>
                         <th>TEMPO</th>
                         <th>OPSI</th>
-                    
-                    </tr>
+                        </tr>
                     </thead>
                     <tbody>
                         @foreach ($transaksi as $in=>$val)
